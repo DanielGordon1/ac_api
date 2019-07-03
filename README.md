@@ -1,5 +1,9 @@
 # AcApi
 
+* If you get an error whilst running this please follow :
+- psql -d postgres
+- CREATE ROLE postgres LOGIN CREATEDB;
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
