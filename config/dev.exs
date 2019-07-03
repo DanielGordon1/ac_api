@@ -2,7 +2,7 @@ use Mix.Config
 
 # Configure your database
 config :ac_api, AcApi.Repo,
-  username: "Daniel",
+  username: "postgres",
   password: "",
   database: "ac_api_dev",
   hostname: "localhost",
