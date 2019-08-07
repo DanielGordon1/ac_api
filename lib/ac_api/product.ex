@@ -3,7 +3,7 @@ defmodule AcApi.Product do
   import Ecto.Changeset
 
   schema "products" do
-    field :price, :integer
+    field :price, :integer, default: 0
     field :title, :string
 
     timestamps()
@@ -14,5 +14,6 @@ defmodule AcApi.Product do
     product
     |> cast(attrs, [:title, :price])
     |> validate_required([:title, :price])
+    |> validate_length(:title, min: 3)
   end
 end
