@@ -42,5 +42,9 @@ defmodule AcApiWeb.Endpoint do
     key: "_ac_api_key",
     signing_salt: "1QJ8DfNS"
 
+  plug Corsica,
+    origins: "http://localhost:8080",
+    log: [rejected: :error, invalid: :warn, accepted: :debug]
+
   plug AcApiWeb.Router
 end

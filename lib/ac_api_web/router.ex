@@ -16,6 +16,7 @@ defmodule AcApiWeb.Router do
   scope "/api", AcApiWeb do
     pipe_through :api
     resources "/users", UserController, except: [:new, :edit]
+    post "/users/sign_in", UserController, :sign_in
   end
 
   scope "/", AcApiWeb do
