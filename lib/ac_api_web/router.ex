@@ -13,8 +13,13 @@ defmodule AcApiWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", AcApiWeb do
+    pipe_through :api
+    resources "/users", UserController, except: [:new, :edit]
+  end
+
   scope "/", AcApiWeb do
-    pipe_through :browser
+    pipe_through :api
 
     get "/", PageController, :index
   end
